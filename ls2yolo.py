@@ -42,7 +42,7 @@ def main(json_path, video_path, output_base):
     labels = set()
     for subject in video_labels[0]['box']:
         labels.add(*subject['labels'])
-    labels_dict = {k:i for i,k in enumerate(labels)}
+    labels_dict = {k:i for i,k in enumerate(sorted(labels))}
 
     # Initialize dictionaries to store file information and frame timestamps
     files_dict = dict()
